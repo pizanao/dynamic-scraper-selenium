@@ -12,3 +12,6 @@ playwright/playwright-report/
 /.idea/dynamic-scraper-selenium.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+/.idea/developer-tools.xml
+/.idea/misc.xml
+/playwright/package-lock.json

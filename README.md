@@ -4,7 +4,7 @@
     
 **Python Data Scraping Engineer roles. It demonstrates a real end-to-end workflow for a dynamic website: login, JavaScript-rendered content, infinite scroll, selector adaptation, validation, retries, and structured exports.**
 
-[![Django](https://img.shields.io/badge/Sselenium-4.20-0C4B33?style=flat-square&logo=selenium)](https://djangoproject.com)
+[![Selenium](https://img.shields.io/badge/Selenium-4.20-0C4B33?style=flat-square&logo=selenium)](https://djangoproject.com)
 [![Playwright](https://img.shields.io/badge/E2E-Playwright-45BA4B?style=flat-square&logo=playwright)](https://playwright.dev)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker)](https://docs.docker.com/compose)
 
@@ -49,3 +49,11 @@ npm run demo:video
 ```
 
 Use only on websites you own or are authorized to test.
+
+---
+
+<div align="center">
+
+Built with Python + Selenium &nbsp;·&nbsp; by Daniel Pizani &nbsp;·&nbsp; No magic — just code
+
+</div>
