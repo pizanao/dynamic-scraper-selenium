@@ -1,11 +1,14 @@
 from flask import Flask, jsonify, request, redirect, make_response
 
+
 def items():
     cats = ["HR", "Operations", "Analytics", "Security"]
     return [
-        {"id": f"ITEM-{i:03d}", "title": f"Workforce Signal {i:03d}", "category": cats[i % 4], "price": round(19.9 + i * 1.37, 2), "rating": round(3.5 + (i % 15) / 10, 1), "url": f"/items/ITEM-{i:03d}"}
+        {"id": f"ITEM-{i:03d}", "title": f"Workforce Signal {i:03d}", "category": cats[i % 4],
+         "price": round(19.9 + i * 1.37, 2), "rating": round(3.5 + (i % 15) / 10, 1), "url": f"/items/ITEM-{i:03d}"}
         for i in range(1, 49)
     ]
+
 
 def create_app():
     app = Flask(__name__)
@@ -36,7 +39,9 @@ def create_app():
         start = (page - 1) * size
         end = start + size
         return jsonify({"items": data[start:end], "page": page, "has_next": end < len(data)})
+
     return app
+
 
 def run(host='127.0.0.1', port=5000):
     create_app().run(host=host, port=port, debug=False)

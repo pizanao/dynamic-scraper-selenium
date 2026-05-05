@@ -1,12 +1,16 @@
-from dataclasses import dataclass
 import os
+from dataclasses import dataclass
+
 from dotenv import load_dotenv
+
 load_dotenv()
+
 
 def as_bool(v: str | None, default=True) -> bool:
     if v is None:
         return default
     return v.lower() in {"1", "true", "yes", "on"}
+
 
 @dataclass(frozen=True)
 class Settings:

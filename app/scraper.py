@@ -1,13 +1,16 @@
 import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from app.code_agent import CodeAgent
 from app.config import Settings
 from app.models import ScrapedRecord
-from app.code_agent import CodeAgent
 from app.utils import ensure_dir, dump_json, dump_csv
+
 
 def build_driver(s: Settings):
     options = Options()
@@ -20,6 +23,7 @@ def build_driver(s: Settings):
         options.add_argument(f'--proxy-server={s.proxy_url}')
     return webdriver.Chrome(options=options)
 
+
 def login(driver, s: Settings):
     driver.get(f'{s.base_url}/login')
     wait = WebDriverWait(driver, s.timeout_seconds)
@@ -29,6 +33,7 @@ def login(driver, s: Settings):
     driver.find_element(By.ID, 'password').send_keys(s.password)
     driver.find_element(By.ID, 'login-button').click()
     wait.until(EC.url_contains('/feed'))
+
 
 def extract(driver, s: Settings, agent: CodeAgent):
     records = []
@@ -40,8 +45,12 @@ def extract(driver, s: Settings, agent: CodeAgent):
         if not all([title, category, price, rating]):
             continue
         href = title.get_attribute('href') or '/'
-        records.append(ScrapedRecord(external_id=card.get_attribute('data-id') or title.text[:20], title=title.text, category=category.text, price=agent.money(price.text), rating=agent.rating(rating.text), url=href if href.startswith('http') else s.base_url.rstrip('/') + href))
+        records.append(ScrapedRecord(external_id=card.get_attribute('data-id') or title.text[:20], title=title.text,
+                                     category=category.text, price=agent.money(price.text),
+                                     rating=agent.rating(rating.text),
+                                     url=href if href.startswith('http') else s.base_url.rstrip('/') + href))
     return records
+
 
 def run_scrape(s: Settings):
     out = ensure_dir(s.output_dir)

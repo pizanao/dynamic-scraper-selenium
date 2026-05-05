@@ -1,8 +1,10 @@
 import argparse
 from dataclasses import replace
+
 from app.config import Settings
 from app.demo_server import run as serve
 from app.scraper import run_scrape
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -23,5 +25,7 @@ def main():
         if args.output_dir:
             s = replace(s, output_dir=args.output_dir)
         print(run_scrape(s))
+
+
 if __name__ == '__main__':
     main()

@@ -1,8 +1,9 @@
 <div align="center">
 
 # :boomerang: Dynamic Web Scraper with Selenium
-    
-**Python Data Scraping Engineer roles. It demonstrates a real end-to-end workflow for a dynamic website: login, JavaScript-rendered content, infinite scroll, selector adaptation, validation, retries, and structured exports.**
+
+**Python Data Scraping Engineer roles. It demonstrates a real end-to-end workflow for a dynamic website: login,
+JavaScript-rendered content, infinite scroll, selector adaptation, validation, retries, and structured exports.**
 
 [![Selenium](https://img.shields.io/badge/Selenium-4.20-0C4B33?style=flat-square&logo=selenium)](https://djangoproject.com)
 [![Playwright](https://img.shields.io/badge/E2E-Playwright-45BA4B?style=flat-square&logo=playwright)](https://playwright.dev)

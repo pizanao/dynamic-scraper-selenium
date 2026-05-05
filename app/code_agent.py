@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class CodeAgent:
     # Selector adaptation loop: tries semantic selectors and reports winners.
     def __init__(self):
