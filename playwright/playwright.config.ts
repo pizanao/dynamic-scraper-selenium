@@ -1,0 +1,2 @@
+import { defineConfig, devices } from '@playwright/test';
+export default defineConfig({ testDir:'./tests', timeout:60000, use:{ baseURL:'http://127.0.0.1:5000', video:'on', viewport:{width:1440,height:1000}}, webServer:{ command:'cd .. && python -m app.cli serve-demo --host 127.0.0.1 --port 5000', url:'http://127.0.0.1:5000/login', reuseExistingServer:true, timeout:30000 }, projects:[{name:'chromium', use:{...devices['Desktop Chrome']}}]});

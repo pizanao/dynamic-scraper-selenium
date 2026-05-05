@@ -1,0 +1,1 @@
+{"scripts":{"demo:video":"playwright test --project=chromium"},"devDependencies":{"@playwright/test":"^1.44.0"}}
