@@ -7,3 +7,8 @@ output/
 playwright/node_modules/
 playwright/test-results/
 playwright/playwright-report/
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/.gitignore
+/.idea/dynamic-scraper-selenium.iml
+/.idea/modules.xml
+/.idea/vcs.xml
